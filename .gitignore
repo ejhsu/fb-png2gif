@@ -1,0 +1,10 @@
+**/bin
+**/lib
+**/include
+**/output
+**/__pycache__
+**/.vscode
+
+**/.DS_Store
+**/.Python
+**/.envrc

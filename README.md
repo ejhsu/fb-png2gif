@@ -4,7 +4,7 @@ This scripts converts Facebook sticker from png, which includes all frames of th
 
 ## Prerequisite
 - python3
-- `$ pip3 -r requirements.txt`
+- `$ pip3 install -r requirements.txt`
 
 
 ## Usage

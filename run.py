@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
 import numpy as np
-import sys
+import os
 import cv2
-import imageio
-from PIL import Image, ImageDraw
+from PIL import Image
 from argparse import ArgumentParser
 
 import colors
@@ -51,8 +50,16 @@ parser.add_argument(
     "-d", "--duration", help="specify the duration of each frame, smaller is faster", default=100, type=int)
 
 args = parser.parse_args()
-output_path = "./output/{}".format(args.output)
 
+# determinate output is absolute path or not
+if os.path.isabs(args.output):
+    output_path = args.output
+else:
+    output_path = "./output/{}".format(args.output)
+
+# prepare output folder if it does not exist
+if not os.path.exists(os.path.dirname(output_path)):
+    os.makedirs(os.path.dirname(output_path))
 
 image = read_sticker(args.file)
 
